@@ -25,6 +25,16 @@
      <input type="text" id="txtid" placeholder="Şehir ID değerini giriniz" class="form-control" />
 </div>
 <br />
+<div>
+    <input type="text" id="txtcityid" placeholder="Silinecek ID değerini giriniz" class="form-control" />
+</div>
+<br />
+<div>
+    <input type="text" id="txtcityeditid" placeholder="güncellenecek ID değerini giriniz" class="form-control" />
+    <input type="text" id="txtcityname" placeholder="güncellenecek şehir değerini giriniz" class="form-control" />
+    <input type="text" id="txtcitdaynightname" placeholder="güncellenecek gün gece bilgisini giriniz" class="form-control" />
+</div>
+<br />
 <div id="destinationlistbyid">
     
 </div>
@@ -93,6 +103,36 @@
                 console.log(result);
                 let htmlstr = `<table class=table table-bordered><tr><th>Şehir Adı</th><th>Gün-Gece</th><th>Fiyatı</th></tr><tr><td>${result.City}</td><td>${result.DayNight}</td><td>${result.Capacity}</td></tr></table>`;
                 $("#destinationlistbyid").html(htmlstr);
+            }
+        });
+    });
+
+    $("#btndeletecity").click(x => {
+        let id = $("#txtcityid").val();
+        $.ajax({
+            url: "/Admin/City/DeleteCity/" + id,
+            type: "post",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (fun3) {
+                alert("şehir silindi");
+            }
+        });
+    });
+
+    $("#btnupdatecity").click(function () {
+        let values = {
+            DestinationID: $("#txtcityeditid").val(),
+            City: $("#txtcityname").val(),
+            DayNight: $("#txtcitdaynightname").val()
+        };
+
+        $.ajax({
+            type: "post",
+            url: "/Admin/City/UpdateCity/",
+            data: values,
+            success: function (fun4) {
+                alert("Güncelleme işlemi yapıldı");
             }
         });
     });
