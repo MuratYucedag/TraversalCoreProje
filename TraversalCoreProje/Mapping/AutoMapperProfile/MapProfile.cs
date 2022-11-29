@@ -13,14 +13,20 @@ namespace TraversalCoreProje.Mapping.AutoMapperProfile
     {
         public MapProfile()
         {
-            CreateMap<AnnouncementAddDTOs, Announcement>();
-            CreateMap<Announcement, AnnouncementAddDTOs>();
+            CreateMap<AnnouncementAddDto, Announcement>();
+            CreateMap<Announcement, AnnouncementAddDto>();
 
             CreateMap<AppUserRegisterDTOs, AppUser>();
             CreateMap<AppUser, AppUserRegisterDTOs>();
 
             CreateMap<AppUserLoginDTOs, AppUser>();
             CreateMap<AppUser, AppUserLoginDTOs>();
+
+            CreateMap<AnnouncementListDto, Announcement>();
+            CreateMap<Announcement, AnnouncementListDto>();
+
+            CreateMap<AnnouncementUpdateDto, Announcement>();
+            CreateMap<Announcement, AnnouncementUpdateDto>();
         }
     }
 }
