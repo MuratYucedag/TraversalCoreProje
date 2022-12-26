@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TraversalCoreProje.CQRS.Results.DestinationResults
+namespace TraversalCoreProje.CQRS.Commands.DestinationCommands
 {
-    public class GetDestinationByIDQueryResult
+    public class UpdateDestinationCommand
     {
         public int DestinationID { get; set; }
         public string City { get; set; }
