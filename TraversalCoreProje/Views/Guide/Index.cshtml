@@ -1,0 +1,43 @@
+﻿@model List<EntityLayer.Concrete.Guide>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<section class="w3l-team" id="team">
+    <div class="team-block py-5">
+        <div class="container py-lg-5">
+            <div class="title-content text-center mb-lg-3 mb-4">
+                <h6 class="sub-title">Ekip Arkadaşlarımız</h6>
+                <h3 class="hny-title">Rehberlerimizle Tanışın</h3>
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                <div class="col-lg-3 col-6 mt-lg-5 mt-4">
+                    <div class="box16">
+                        <a href="#url"><img src="@item.GuideListImage" style="height:330px;width:500px" alt="" class="img-fluid" /></a>
+                        <div class="box-content">
+                            <h3 class="title"><a href="#url">@item.Name</a></h3>
+                            <span class="post">@item.Description</span>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="facebook">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="twitter">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

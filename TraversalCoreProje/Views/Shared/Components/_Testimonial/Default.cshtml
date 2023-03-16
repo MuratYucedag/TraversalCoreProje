@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model List<Testimonial>
+<section class="w3l-clients" id="clients">
+    <!-- /grids -->
+    <div class="cusrtomer-layout py-5">
+        <div class="container py-lg-4 py-md-3 pb-lg-0">
+            <div class="heading text-center mx-auto">
+                <h6 class="sub-title text-center">Misafirlerimiz bizim için ne dediler?</h6>
+                <h3 class="hny-title mb-md-5 mb-4">Düşünceleriniz bizim için çok kıymetli</h3>
+            </div>
+            <!-- /grids -->
+            <div class="testimonial-width">
+                <div id="owl-demo1" class="owl-two owl-carousel owl-theme">
+                    @foreach (var item in Model)
+                    {
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <span class="fa fa-quote-left" aria-hidden="true"></span>
+                                        @item.Comment
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <div class="test-img">
+                                            <img src="@item.ClientImage" class="img-fluid" alt="client-img">
+                                        </div>
+                                        <div class="peopl align-self">
+                                            <h3>@item.Client</h3>
+                                            <p class="indentity">Example City</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

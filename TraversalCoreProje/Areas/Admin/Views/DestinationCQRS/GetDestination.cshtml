@@ -1,0 +1,23 @@
+﻿@model GetDestinationByIDQueryResult
+
+@{
+    ViewData["Title"] = "GetDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Lokasyon Düzenleme Sayfası</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="DestinationID" />
+    <label>Şehir</label>
+    <input type="text" asp-for="City" class="form-control" />
+    <br />
+    <label>Gün-Gece</label>
+    <input type="text" asp-for="DayNight" class="form-control" />
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">Lokasyon Bilgilerini Güncelle</button>
+</form>
+
