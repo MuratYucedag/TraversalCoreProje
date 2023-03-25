@@ -1,23 +1,22 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using SignalRApi.Model;
+using SignalRApiForSql.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SignalRApi.Hubs
+namespace SignalRApiForSql.Hubs
 {
-    public class VisitorHub : Hub
+    public class VisitorHub:Hub
     {
         private readonly VisitorService _visitorService;
-
         public VisitorHub(VisitorService visitorService)
         {
             _visitorService = visitorService;
         }
         public async Task GetVisitorList()
         {
-            await Clients.All.SendAsync("CallVisitList", _visitorService.GetVisitorChartList());
+            await Clients.All.SendAsync("ReceiveVisitorList", _visitorService.GetVisitorChartList());
         }
     }
 }

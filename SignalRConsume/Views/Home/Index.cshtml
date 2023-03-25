@@ -3,23 +3,24 @@
 }
 
 @section Scripts
-{ 
+{
 
     <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-   <script type="text/javascript">
-       $(document).ready(() => {    
+    <script type="text/javascript">
+        $(document).ready(() => {
 
-           var connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:65140/VisitorHub").build();
+            var connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:65140/VisitorHub").build();
 
-           $("#connectionStatus").text(connection.connectionState);
+            $("#connectionStatus").text(connection.connectionState);
 
-           connection.start().then(() => {
-               $("#connectionStatus").text(connection.connectionState);
-           }).catch((err) => { console.log(err) });
+            connection.start().then(() => {
+                $("#connectionStatus").text(connection.connectionState);
+            }).catch((err) => { console.log(err) });
 
-       })
-   </script>
+        })
+    </script>
 
 }
 
