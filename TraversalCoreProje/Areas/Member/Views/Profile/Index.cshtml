@@ -2,34 +2,57 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
 }
 
-<h1>Profil Düzenleme Sayfası</h1>
-<form method="post" enctype="multipart/form-data">
-    @Html.Label("Adınız")
-    <input type="text" asp-for="name" class="form-control" />
-    <br />
-    @Html.Label("Soyadınız")
-    <input type="text" asp-for="surname" class="form-control" />
-    <br />
-    @Html.Label("Mail Adresiniz")
-    <input type="text" asp-for="mail" class="form-control" />
-    <br />
-    @Html.Label("Şifreniz")
-    <input type="text" asp-for="password" class="form-control" />
-    <br />
-    @Html.Label("Şifre Tekrar")
-    <input type="text" asp-for="confirmpassword" class="form-control" />
-    <br />
-    @Html.Label("Telefon Numarası")
-    <input type="text" asp-for="phonenumber" class="form-control" />
-    <br />
-    <div class="form-group">
-        <label>Resim Seçin</label>
-        <input type="file" asp-for="Image" />
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Profil Güncelleme Sayfası</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <p class="card-text">Profil ile ilgili bilgilerinizi bu sayfadan güncelleyebilirsiniz</p>
+                    <form method="post" enctype="multipart/form-data">
+                        @Html.Label("Adınız")
+                        <input type="text" asp-for="name" class="form-control" />
+                        <br />
+                        @Html.Label("Soyadınız")
+                        <input type="text" asp-for="surname" class="form-control" />
+                        <br />
+                        @Html.Label("Mail Adresiniz")
+                        <input type="text" asp-for="mail" class="form-control" />
+                        <br />
+                        @Html.Label("Şifreniz")
+                        <input type="text" asp-for="password" class="form-control" />
+                        <br />
+                        @Html.Label("Şifre Tekrar")
+                        <input type="text" asp-for="confirmpassword" class="form-control" />
+                        <br />
+                        @Html.Label("Telefon Numarası")
+                        <input type="text" asp-for="phonenumber" class="form-control" />
+                        <br />
+                        <div class="form-group">
+                            <label>Resim Seçin</label>
+                            <input type="file" asp-for="Image" />
+                        </div>
+                        <br />
+                        <button class="btn btn-primary">Bilgileri Güncelle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <br />
-    <button class="btn btn-primary">Bilgileri Güncelle</button>
-</form>
+</div>
 

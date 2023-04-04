@@ -1,27 +1,50 @@
 ﻿@model EntityLayer.Concrete.Reservation
 @{
     ViewData["Title"] = "NewReservation";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
 }
 
-<h1>Yeni Rezervasyon Sayfası</h1>
-<form method="post">
-    @*<div class="form-group">
-        @Html.Label("Lokasyon")
-        @Html.DropDownListFor(x => x.Destination, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
-    </div>*@
-    <div class="form-group">
-        @Html.Label("Kişi Sayısı")
-        <input type="text" asp-for="PersonCount" class="form-control" />
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Yeni Rezervasyon Sayfası</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <p class="card-text">Web Sitemiz Traversal üzerinde yer alan lokasyonlar içinde yeni bir rezervasyonu aşağıdaki panelden yapabilirsiniz. </p>
+                    <form method="post">
+                        @*<div class="form-group">
+            @Html.Label("Lokasyon")
+            @Html.DropDownListFor(x => x.Destination, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+        </div>*@
+                        <div class="form-group">
+                            @Html.Label("Kişi Sayısı")
+                            <input type="text" asp-for="PersonCount" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Tarih")
+                            <input type="date" asp-for="ReservastionDate" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Varsa Eklemek İstedikleriniz")
+                            <input type="text" asp-for="Description" class="form-control" />
+                        </div>
+                        <button class="btn btn-outline-success">Rezervasyon Yap</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        @Html.Label("Tarih")
-        <input type="date" asp-for="ReservastionDate" class="form-control" />
-    </div>
-    <div class="form-group">
-        @Html.Label("Varsa Eklemek İstedikleriniz")
-        <input type="text" asp-for="Description" class="form-control" />
-    </div>
-    <button class="btn btn-outline-success">Rezervasyon Yap</button>
-</form>
+</div>
 
