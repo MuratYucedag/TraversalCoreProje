@@ -42,7 +42,7 @@
                         <td>@item.ReservationID</td>
                         <td>@item.Destination.City</td>
                         <td>@item.PersonCount</td>
-                        <td>@item.ReservastionDate</td>
+                        <td>@(((DateTime)item.ReservastionDate).ToString("dd-MMM-yyyy"))</td>
                         <td>@item.Status</td>
                     </tr>}
 

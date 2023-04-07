@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "MyOldReservation";
     Layout = "~/Views/Shared/_MemberLayout.cshtml";
+    int count = 0;
 }
 
 <div class="row">
@@ -37,13 +38,14 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                    <tr>
-                        <td>@item.ReservationID</td>
-                        <td>@item.Destination.City</td>
-                        <td>@item.PersonCount</td>
-                        <td>@item.ReservastionDate</td>
-                        <td>@item.Status</td>
-                    </tr>
+                                    count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td>@item.Destination.City</td>
+                                    <td>@item.PersonCount</td>
+                                    <td>@(((DateTime)item.ReservastionDate).ToString("dd-MMM-yyyy"))</td>
+                                    <td>@item.Status</td>
+                                </tr>
 }
 
                             </tbody>
