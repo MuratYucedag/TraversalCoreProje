@@ -46,7 +46,7 @@ namespace TraversalCoreProje.Controllers
 
                 return RedirectToAction("Index","Default");
             }
-            return View(model);
+            return View(); //Hocam buradaki model silmemiz gerekiyor silmezsek validator çalışmıyor saygılarımla
         }
     }
 }
